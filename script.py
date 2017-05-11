@@ -29,26 +29,24 @@ for i in range(len(sex)):
     s.append(temp)
     first.append(1)
 
-#Graph the data to visually find any obvious coorelations
-
 x = pd.DataFrame(first)
 x[['Age','Fare']] = train[['Age','Fare']]
 x['Sex'] = s
 
 #Check the data for any obvious clustering
 fig, ax = plt.subplots()
-x[['Age','Fare']].plot(kind="scatter", x="Age", y="Fare", s=50, 
-                            c=train.Survived, cmap="plasma", ax=ax)
+train.plot(kind="scatter", x="Age", y="Fare", s=50, 
+                            c="Survived", ax=ax, cmap="plasma")
 plt.savefig('fig1')
 
 fig, ax = plt.subplots()
 x[['Sex','Fare']].plot(kind="scatter", x="Sex", y="Fare", s=50, 
-                            c=train.Survived, cmap="plasma", ax=ax)
+                            c=train.Survived, ax=ax, cmap="plasma")
 plt.savefig('fig2')
 
 fig, ax = plt.subplots()
 train[['Age','Survived']].plot(kind="scatter", x="Age", y="Survived", s=50, 
-                            c=x.Sex, cmap="plasma", ax=ax)
+                            c=x.Sex, ax=ax, cmap="plasma")
                             
 plt.savefig('fig3')
 
@@ -56,13 +54,7 @@ fig, ax = plt.subplots()
 
 x.plot(kind='scatter', x='Age', y='Fare', c= 'Sex', ax=ax, cmap='plasma')
 
-plt.savefig('fig1')
-
-fig, ax = plt.subplots()
-
-x.plot(kind='scatter', x='Age', y='Fare', c= train.Survived, ax=ax, cmap='plasma')
-
-plt.savefig('fig2')
+plt.savefig('fig4')
 
 
 #Find and replace all the null values with the median value
