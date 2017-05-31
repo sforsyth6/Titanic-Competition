@@ -2,7 +2,7 @@
 
 This was part of a kaggle.com competition and the results produced from this code can be found here: https://www.kaggle.com/sforsyth6/titanic
 
-This code is my first attempt at machine learning. Within it I use both multivariable linear regression and k nearest neighbor to predict who would have survived the titanic based on their age, sex, and wealth. Both methods are used to do the exact same thing in the code, I wanted to use this to become more familair with the algorithms and to test my abiltiy to implement them. 
+This code is my first attempt at machine learning. Within it I use a random forest algorithm to predict who would survive the titanic based on several features such as age, sex, class, and fare. I use a couple methods of feature selections such as adding up to fourth order polynomial terms and pruning features that don't meet a certain threshold. For missing data, I averaged the values of that feature and appeneded that value to it. 
 
 The competition description is as follows:
 
